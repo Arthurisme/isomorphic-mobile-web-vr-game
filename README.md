@@ -1,4 +1,4 @@
-# isomorphic-mobile-web-vr-game
+# isomorphic-mobile-web-vr-game-starter
 A isomorphic quick starter share same datasource and reuse angular 2 code over Mobile, Desktop, Web and  game App. The components can be choose between Spring, MEAN, CEAN, Ionic, NativeScript freely.
 A full function real app is implemented and  will be push as: [TimeMachineAlpha](https://github.com/Arthurisme/TimeMachineAlpha)   
 
