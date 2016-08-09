@@ -21,24 +21,27 @@ About Grails and Griffon implementation: I heard some news  from Grails framew
 Currently Grails already have AngularJS 1.0 Scaffolding command and Json view plugin.
 So I plan to have a Grails 3.x  backend implementation using  Angular 2 scaffolding, Json view, and rest-api.
 
+## Architecture Structure and code share diagram:
+![alt tag](https://github.com/Arthurisme/TimeMachineAlpha/blob/master/Planning/Architecture-and-code-share-diagram.png?raw=true)
+
 ## File Structure:
 ```
 ├── Backend  
-│   ├── CEAN   -------------Backend use couchbase, express,Angular 2 and Nodejs.  
-│   ├── MEAN   -------------Backend use MongoDB, express,Angular 2 and Nodejs.  
-│   └── SpringBoot----------Backend use Spring framework,Spring Boot,Spring Data.  
+│   ├── CEAN   -------------Backend implementation use couchbase, express,Angular 2 and Nodejs.  
+│   ├── MEAN   -------------Backend implementation use MongoDB, express,Angular 2 and Nodejs.  
+│   └── SpringBoot----------Backend implementation use Spring framework,Spring Boot,Spring Data.  
 ├── Frontend  
-│   ├── CLI       ----------Frontend use Angular 2 official CLI starter.  
-│   └── QuickStart----------Frontend use Angular 2 official QuickStart starter.  
+│   ├── CLI       ----------Frontend implementation use Angular 2 official CLI starter.  
+│   └── QuickStart----------Frontend implementation use Angular 2 official QuickStart starter.  
 ├── Game-VR  
 │   ├── jMonkey   ----------VR implementation use jMonkey engine.  
 │   └── unity     ----------VR implementation use Unity engine.
 ├── Game-VR-Unreal
-│   ├── NativeScriptVR------Mobile app use NativeScript 2 framework and call some Unreal engine view.   
+│   ├── NativeScriptVR------Mobile app implementation use NativeScript 2 framework and call some Unreal engine view.   
 │   └── unreal    ----------VR implementation use Unreal engine.   
 ├── MobileApp  
-│   ├── NativeScript--------Mobile app use NativeScript 2 framework with Angular 2.  
-│   └── ionic       --------Mobile app use ionic 2 framework with Angular 2.  
+│   ├── NativeScript--------Mobile app implementation use NativeScript 2 framework with Angular 2.  
+│   └── ionic       --------Mobile app implementation use ionic 2 framework with Angular 2.  
 ├── README.md  
 ```
 
@@ -48,22 +51,32 @@ So I plan to have a Grails 3.x  backend implementation using  Angular 2 scaffold
 2. Spring Tool Suite IDE, or Intellij IDEA, or Eclipse  
 3. Xcode (optional)  
 4. jMonkey, or Unreal Engine, or Unity Engine for only VR part.
+5. Use node 5.8.0+ because there are some issue for ionic 2 with old node version.
 
-###For Website  
-####For backend  
-##### Spring framework with a sql datasource:  
+
+###For backend  
+####1. Spring framework with a sql datasource:
+Backend RESTful service provide by spring data with sql database, H2 database by default
 Location: /Backend/Spring/SQL-version/SpringBoot  
-######How to Use:  
+How to Use:  
 open with Intellij IDEA or Eclipse.  
-####For backend
-##### Angular 2 with official QuickStart starter:
+###For Frontend
+####1. Angular 2 with official QuickStart starter:   
+Frontend website which can use any afore said Backend implementation via RESTful.
 Location: /Frontend/QuickStart/  
 How to Use:  
 cd /Frontend/QuickStart/  
 npm install (to install angular2 dependencies - you need Internet connection for this)  
-npm start (to start the Web application)  
-
-
+npm start (to start the Web application)
+###For Mobile App
+####1. ionic 2 with angular2:  
+Mobile App which can use any afore said Backend implementation via RESTful.    
+Location: /MobileApp/ionic/  
+How to Use:  
+cd /MobileApp/ionic/
+Install the ionic CLI (npm install -g ionic@beta cordova) !change beta to version number after ionic 2 finial released.     
+npm install (to install  dependencies - you need Internet connection for this)  
+ionic sever --lab (to start the Web emulator)   
 
 
 
